@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habilidades Empleado</title>
+</head>
+<body>
+    <h1>Buscar empleados por nombre</h1>
+    <form method="GET">{% csrf_token %}
+        <input type="text" id="empleado" name="empleado" placeholder="Ingrese el ID del usuario">
+        <button type="submit">Buscar</button>
+    </form >
+    {% if habilidades %}
+        <ul>
+            {% for habilidad in habilidades %}
+                <li>{{habilidad.habilidad}}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>El empleado no existe o no tiene habilidades</p>
+    {% endif %}
+</body>
+</html>

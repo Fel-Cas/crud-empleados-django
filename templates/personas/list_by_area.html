@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Lista Empleados por Departamento
+{% endblock title %}
+
+{% block content %}
+<div class="grid-container">
+    <div class="cell">
+        <table>
+            <thead>
+                Empleados de la compañia
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ID</td>
+                    <td >Nombres</td>
+                    <td>Apellidos</td>
+                    <td>Departamento</td>
+                    <td>Acción</td>
+                </tr>
+                
+                {% for item in empleados %}
+                    <tr>
+                        <td>{{item.id}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.lastName}}</td>
+                        <td>{{item.departamento}}</td>                    
+                        <td>
+                            <a class="button warning" href="{% url 'empleados_app:empleado-detail' item.id %}">Ver</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}

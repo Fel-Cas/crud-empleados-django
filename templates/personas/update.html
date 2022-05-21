@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Editar Empleado
+{% endblock title %}
+{% block content %}
+<div class="grid-container">
+    <div class="grid-x ">
+        <div class="cell">
+            <h1>Actualizar Empleados</h1>
+        </div>
+        <div class="cell">            
+            <form class="grid-x grid-margin-x" method="POST">{% csrf_token %}
+                <div class="large-6 cell">
+                    <label>Nombres
+                        {{form.name}}
+                    </label>
+                </div>
+                <div class="large-6 cell">
+                    <label>Apellidos
+                        {{form.lastName}}
+                    </label>
+                </div>
+                <div class="large-6 cell">
+                    <label>Trabajo
+                        {{form.job}}
+                    </label>
+                </div>
+                <div class="large-6 cell">
+                    <label>Departamento
+                        {{form.departamento}}
+                    </label>
+                </div>
+                <div class="large-6 cell">
+                    <label>Habilidades
+                        {{form.habilidades}}
+                    </label>
+                </div>
+                <div class="large-6 cell">
+                    <label>Hoja de Vida
+                        {{form.hoja_vida}}
+                    </label>
+                </div>
+                <div class="cell">
+                    <button type="submit" class="success button" >Actualizar</button>
+                </div>
+            </form>
+        </div>
+    </div>    
+</div>
+{% endblock content %}

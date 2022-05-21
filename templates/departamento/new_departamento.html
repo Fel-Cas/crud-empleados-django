@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% endblock title %}
+
+{% block content %}
+<div class="grid-container">
+    <div class="grid-x">
+        <h1 class="cell">Registrar un Departamento</h1>
+        <form class="cell callout grid-x grid-margin-x" method="POST">{% csrf_token %}
+            <div class="medium-6  cell">
+                <label for="name">Nombre</label>
+                {{form.name}}
+            </div>
+            <div class="medium-6  cell">
+                <label for="last_names">Apellidos</label>
+                {{form.last_names}}
+            </div>
+            <div class="medium-6  cell">
+                <label for="departamento">Departamento</label>
+                {{form.departamento}}
+            </div>
+            <div class="medium-6  cell">
+                <label for="shoortname">Shortname</label>
+                {{form.shortname}}
+            </div>
+            <div class="medium-6 cell">
+                <input type="submit"  class="button"  value="Crear">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
+    
